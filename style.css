@@ -1,0 +1,540 @@
+/* 전체 스타일 */
+html {
+    height: 3100px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+head {
+    display: flex;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #141414;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 22%;
+}
+
+#price {
+    font-size: 20px;
+}
+
+#ready {
+    font-size: 16px;
+}
+
+.header-bg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0px;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 70%, rgba(0, 0, 0, 0.3) 110%, transparent 100%), url('./헤더배경/진짜배경.jpg') no-repeat center center/cover;
+}
+
+/* 헤더 안의 제목 */
+#maintitle {
+    font-size: 36px;
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    margin-top: 100px;
+}
+
+/* 검색창 스타일 */
+.search-bar {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    gap: 10px;
+}
+
+#searchInput {
+    border: 1px solid white;
+}
+
+/* 회원가입 섹션 스타일 */
+.signup-section {
+    max-width: 600px;
+}
+
+.signup-section h1 {
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* 이메일 입력창과 버튼 */
+.signup-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.signup-form input {
+    width: 400px;
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 16px;
+    background: transparent;
+    color: white;
+}
+
+.signup-btn {
+    font-size: 30px;
+}
+
+.signup-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-btn:hover {
+    background-color: darkred;
+}
+
+#maintitle {
+    color: #e50914;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.5s, color 0.5s;
+    text-align: center;
+    margin: 0;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#maintitle:hover {
+    /* 배경색과 글자색 유지 */
+    background-color: #141414;
+    color: #e50914;
+
+    /* 그림자 효과 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* 그림자 효과 */
+    opacity: 0.8;
+
+    transform: scale(1.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.btn:hover {
+    background-color: darkred;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    /* 검색 버튼과 로그인 버튼 사이 간격 추가 */
+}
+
+#logbtn {
+    margin-left: 5px;
+    /* 검색 버튼과 로그인 버튼 사이 간격 추가 */
+}
+
+.btn {
+    width: 85px;
+    height: 40px;
+}
+
+/* 메인 컨텐츠 스타일 */
+main {
+    padding: 20px;
+    height: 85%;
+    display: flex;
+    position: relative;
+}
+
+.section-title {
+    text-align: left;
+    font-size: 30px;
+    margin-bottom: 0px;
+    /* "인기 콘텐츠" 텍스트 아래 간격 조정 */
+    margin-top: 80px;
+    margin-left: 10px;
+
+}
+
+.section-title2 {
+    text-align: left;
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-top: 150px;
+    margin-left: 20px;
+
+}
+
+#reason {
+    margin-left: 45px;
+    font-size: 28px;
+}
+
+.genre-select {
+    right: 20px;
+    width: 150px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 10;
+    margin-left: 85%;
+    margin-top: -70px;
+    margin-bottom: 30px;
+}
+
+.genre-select label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.genre-select select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #666;
+    appearance: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 선택 상자 화살표 스타일링 */
+.genre-select select::-ms-expand {
+    display: none;
+}
+
+/* 영화 컨테이너 스타일 */
+.movie-container {
+    position: relative;
+    width: 100%;
+    /* Adjust as needed to fit 6 movies */
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    margin-top: -30px;
+    margin-bottom: 100px;
+    padding-top: 20px;
+}
+
+.movie-list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 400px;
+}
+
+.movie-page {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    height: 500px;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+}
+
+.movie {
+    width: calc(100% / 6 - 15px);
+    height: 320px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.movie img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 이미지 비율 유지 */
+    cursor: pointer;
+}
+
+.movie:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+.drama-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    margin-top: -50px;
+    padding-top: 30px;
+}
+
+.drama-list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 400px;
+}
+
+/* 화살표 버튼 스타일 */
+.prev-btn,
+.next-btn,
+.drama-prev-btn,
+.drama-next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.prev-btn:hover,
+.next-btn:hover,
+.drama-prev-btn:hover,
+.drama-next-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* 왼쪽 버튼 위치 */
+.prev-btn,
+.drama-prev-btn {
+    left: 0;
+}
+
+/* 오른쪽 버튼 위치 */
+.next-btn,
+.drama-next-btn {
+    right: 0;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+    margin-top: 40px;
+}
+
+.container {
+    background: linear-gradient(135deg, #1e1641, #200d25);
+    border-radius: 15px;
+    padding: 30px;
+    width: 250px;
+    height: 280px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+.container h1 {
+    font-size: 24px;
+    margin-bottom: 2px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.container p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.container img {
+    width: 80px;
+    height: 80px;
+    margin-left: 190px;
+    margin-top: 60px;
+}
+
+#logo-1 {
+    margin-top: 40px;
+    margin-left: 170px;
+}
+
+#logo-2 {
+    margin-top: 25px;
+    margin-left: 170px;
+}
+
+#logo-3 {
+    margin-top: 35px;
+    margin-left: 170px;
+}
+
+#logo-4 {
+    margin-top: -15px;
+    margin-left: 170px;
+}
+
+.qa-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#qna {
+    font-size: 25px;
+    font-weight: lighter;
+    margin-left: 135px;
+    margin-bottom: -10px;
+}
+
+#link {
+    color: white;
+}
+
+.qa-box>div {
+    width: 1100px;
+    height: 90px;
+    text-align: center;
+    background: #2d2d2d;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    padding-left: 30px;
+}
+
+.qa-box>div:hover {
+    transition: background-color 0.3s, transform 0.3s;
+    background-color: #5c5b5b;
+}
+
+.qa-box>p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1100px;
+    height: wrap;
+    border-radius: 10px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: none;
+    font-size: 20px;
+    background: #2d2d2d;
+    margin-top: 10px;
+}
+
+.btn1 {
+    background: #2d2d2d;
+    height: 30px;
+    border: none;
+    width: 30px;
+    color: white;
+    margin-right: 10px;
+    font-size: 40px;
+    line-height: 5px;
+    background: none;
+    margin-right: 20px;
+}
+
+
+/* 푸터 스타일 */
+footer {
+    display: flex;
+    background-color: #141414;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    height: 5%;
+}
+
+@media (max-width: 1024px) {
+
+    .movie-page,
+    .drama-movie-page {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3개씩 배치 */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .movie-page,
+    .drama-movie-page {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2개씩 배치 */
+    }
+}
+
+@media (max-width: 480px) {
+
+    .movie-page,
+    .drama-movie-page {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1개씩 배치 */
+    }
+}

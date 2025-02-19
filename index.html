@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">JUFLIX</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- jQueryUI 1.14.1 -->
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"
+        integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-bg">
+            <h2 id="maintitle" onclick="window.location.href='index.html'">JUFLIX</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="영화,드라마 검색" id="searchInput">
+                <button onclick="searchMovies()" class="btn">검색</button>
+                <button class="btn" id="logbtn" onclick="window.location.href='login.html'">로그인</button>
+            </div>
+
+
+            <div class="signup-section">
+                <h1>영화, 시리즈 등을 <br>무제한으로</h1>
+                <p id="price">5,500원으로 시작하세요. 멤버십은 언제든지  해지 가능합니다.</p>
+                <p id="ready">시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일 주소를 <br>입력하세요.</p>
+                <div class="signup-form">
+                    <input type="email" placeholder="이메일 주소" id="emailInput">
+                    <button type="submit" class="signup-btn" onclick="saveEmailAndRedirect()">시작하기 &nbsp; &nbsp;></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+
+
+            <h2 class="section-title">지금 뜨는 영화</h2>
+            <div class="genre-select">
+                <label for="genre">장르</label>
+                <select id="movieGenre" onchange="filterMovies()">
+                    <option value="all">전체</option>
+                    <option value="action">액션</option>
+                    <option value="comedy">코미디</option>
+                    <option value="drama">드라마</option>
+                </select>
+            </div>
+
+            <div class="movie-container">
+                <button class="prev-btn">&#10094;</button>
+                <!-- 왼쪽 버튼 -->
+
+                <div class="movie-list" id="movieList">
+
+                </div>
+                <button class="next-btn">&#10095;</button>
+                <!-- 오른쪽 버튼 -->
+            </div>
+
+            <h3 id="reason">가입해야하는 또 다른 이유</h3>
+            <div id="container">
+                <div class="container">
+                    <h1>TV로 즐기세요</h1>
+                    <p>스마트 TV, PlayStation, Xbox, Chromecast, Apple TV, 블루레이 플레이어 등 다양한 디바이스에서 시청하세요.</p>
+                    <img src="./logo/tv.png" alt="TV Icon" id="logo-1">
+                </div>
+                <div class="container">
+                    <h1>즐겨 보는 콘텐츠를 <br> 저장해 오프라인으로 <br>시청하세요</h1>
+                    <p>간편하게 저장하고 빈틈없이 <br>즐겨보세요.</p>
+                    <img src="./logo/off.png" alt="Download Icon" id="logo-2">
+                </div>
+                <div class="container">
+                    <h1>다양한 디바이스로 <br>시청하세요</h1>
+                    <p>각종 영화와 시리즈를 스마트폰, 태블릿, 노트북, TV에서 <br>무제한으로 스트리밍하세요.</p>
+                    <img src="./logo/device.png" alt="Device Icon" id="logo-3">
+                </div>
+                <div class="container">
+                    <h1>어린이 전용 프로필을 만들어 보세요</h1>
+                    <p>자기만의 공간에서 좋아하는 <br>캐릭터와 즐기는 신나는 모험. <br>자녀에게 이 특별한 경험을 선물하세요.주플릭스 회원이라면 <br>무료입니다.</p>
+                    <img src="./logo/kid.png" alt="Kids Icon" id="logo-4">
+                </div>
+            </div>
+            <h2 class="section-title2">지금 뜨는 드라마</h2>
+            <div class="genre-select">
+                <label for="dramaGenre">장르</label>
+                <select id="dramaGenre" onchange="filterDramaMovies()">
+                    <option value="all">전체</option>
+                    <option value="action">스릴러,액션</option>
+                    <option value="comedy">코미디,가족</option>
+                    <option value="drama">드라마</option>
+                </select>
+            </div>
+            <div class="drama-container">
+                <button class="prev-btn drama-prev-btn">&#10094;</button>
+                <!--왼쪽-->
+                <div class="drama-list" id="dramaMovieList">
+
+                </div>
+                <button class="next-btn drama-next-btn">&#10095;</button>
+                <!--오른쪽-->
+            </div>
+            <h2 id="qna">자주 묻는 질문</h2>
+            <div class="qa-box">
+                <div>주플릭스에서 어떤 콘텐츠를 시청할 수 있나요?
+                    <button class="btn1">+</button>
+                </div>
+                <p>주플릭스는 장편 영화, 다큐멘터리, 시리즈, 애니메이션, 각종 상을 수상한 넷플릭스 오리지널 등 수많은 콘텐츠를 확보하고 있습니다.
+                    마음에 드는 콘텐츠를 원하는 시간에 원하는 만큼 시청하실 수 있습니다. <br> <br>
+                    <a href="https://www.netflix.com/kr/browse/genre/839338" id="link">주플릭스 콘텐츠를 한번 살펴보세요.</a></p>
+
+                <div>주플릭스란 무엇인가요?
+                    <button class="btn1">+</button>
+                </div>
+                <p>주플릭스는 각종 수상 경력에 빛나는 시리즈, 영화, 애니메이션, 다큐멘터리 등 다양한 콘텐츠를 인터넷 연결이 가능한 수천 종의 디바이스에서 시청할 수 있는 스트리밍 서비스입니다.
+                    <br><br>
+
+                    저렴한 월 요금으로 원하는 시간에 원하는 만큼 즐길 수 있습니다. 무궁무진한 콘텐츠가 준비되어 있으며 매주 새로운 시리즈와 영화가 제공됩니다.</p>
+
+                <div>주플릭스 요금은 얼마인가요?
+                    <button class="btn1">+</button>
+                </div>
+                <p>스마트폰, 태블릿, 스마트 TV, 노트북, 스트리밍 디바이스 등 다양한 디바이스에서 월정액 요금 하나로 <br>
+                    주플릭스를 시청하세요. 멤버십 요금은 월 5,500원부터 17,000원까지 다양합니다.추가 비용이나 <br>약정이 없습니다.</p>
+
+                <div>어디에서 시청할 수 있나요?
+                    <button class="btn1">+</button>
+                </div>
+                <p>언제 어디서나 시청할 수 있습니다. 주플릭스 계정으로 로그인하면 PC에서 juflix.com을 통해 바로 시청할 수 있으며,
+                    인터넷이 연결되어 있고 주플릭스 앱을 지원하는 디바이스(스마트 TV, 스마트폰, 태블릿, 스트리밍 미디어 플레이어, 게임 콘솔 등)에서도 언제든지 시청할 수 있습니다.
+                    <br> <br>
+                    iOS 또는 Android용 앱에서는 좋아하는 시리즈를 저장할 수도 있습니다. 저장 기능을 이용해 이동 중이나 인터넷에 연결할 수 없는 곳에서도 시청하세요. 넷플릭스는 어디서든 함께니까요.</p>
+
+                <div>멤버쉽을 해지하려면 어떻게 하나요?
+                    <button class="btn1">+</button>
+                </div>
+                <p>주플릭스는 부담 없이 간편합니다. 성가신 계약도, 약정도 없으니까요. 멤버십 해지도 온라인에서 클릭 <br>두 번이면 완료할 수 있습니다. 해지 수수료도 없으니 원할 때 언제든 계정을 시작하거나 종료하세요.</p>
+
+                <div>아이들이 주플릭스를 봐도 좋을까요?
+                    <button class="btn1">+</button>
+                </div>
+                <p>멤버십에 주플릭스 키즈 환경이 포함되어 있어 자녀가 자기만의 공간에서 가족용 시리즈와 영화를 즐기는 동안 부모가 이를 관리할 수 있습니다.
+                    <br><br>
+
+                    키즈 프로필과 더불어 PIN 번호를 이용한 자녀 보호 기능도 있어, 자녀가 시청할 수 있는 콘텐츠의 관람등급을 제한하고 자녀의 시청을 원치 않는 특정 작품을 차단할 수도 있습니다.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 JUCHAN. All rights reserved.</p>
+    </footer>
+
+    <script src="./slide.js"></script>
+
+</body>
+
+</html>

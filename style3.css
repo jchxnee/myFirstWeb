@@ -1,0 +1,123 @@
+/* 전체 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+#maintitle {
+    font-size: 50px;
+    font-weight: bold;
+    color: #e50914;
+    text-decoration: none;
+}
+
+#maintitle:hover {
+    /* 배경색과 글자색 유지 */
+    background-color: #ffffff;
+    color: #e50914;
+    /* 그림자 효과 */
+    opacity: 0.8; 
+    transform: scale(1.05); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease; 
+    cursor: pointer;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 메인 컨텐츠 스타일 */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.signup-container {
+    width: 500px;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+    height: 500px;
+}
+
+.signup-container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.signup-container p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#emailDisplay {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e50914;
+}
+
+.form-group input[type="password"], input[type="email"]{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.next-btn {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}

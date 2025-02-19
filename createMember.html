@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">MY OTT - 회원 가입</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <header>
+        <h2 id="maintitle" onclick="window.location.href='index.html'">JUFLIX</h2>
+        <div class="header-right">
+            <button class="btn" id="logbtn" onclick="window.location.href='login.html'">로그인</button>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <div class="signup-container">
+            <h1>1/3단계</h1>
+            <p>회원님, 반갑습니다. 주플릭스 가입 절차는 간단합니다.</p>
+            <p>비밀번호를 입력하시면 바로 시청하실 수 있습니다.</p>
+
+            <div class="form-group">
+                <label for="email">이메일 주소</label>
+                <p id="emailDisplay"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="password">비밀번호를 입력하세요.</label>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <button type="submit" class="next-btn">다음</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 JUCHAN. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+    setTimeout(function() {
+        var email = localStorage.getItem('email');
+        if (email) {
+            document.getElementById('emailDisplay').innerText = email;
+        } else {
+            document.getElementById('emailDisplay').innerText = '이메일 주소가 없습니다.';
+        }
+    }, 100); // 0.1초 딜레이
+}
+        </script>
+
+</body>
+</html>

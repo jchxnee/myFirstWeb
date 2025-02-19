@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">MY OTT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h2 id="maintitle" onclick="window.location.href='index.html'">MY OTT</h2>
+        <div class="search-bar">
+            <input type="text" placeholder="영화 검색" id="searchInput">
+            <button id="searchBtn">검색</button> <!-- JS에서 이벤트 리스너로 연결 -->
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="section-title">인기 콘텐츠</h2>
+            <div class="genre-select">
+                <label for="genre">장르</label>
+                <select id="genre">
+                    <option value="all">전체</option>
+                    <option value="action">액션</option>
+                    <option value="comedy">코미디</option>
+                    <option value="drama">드라마</option>
+                </select>
+            </div>
+            <div class="movie-container">
+                <button class="prev-btn">&#10094;</button> 
+                <div class="movie-list" id="movieList"></div>
+                <button class="next-btn">&#10095;</button> 
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MY OTT. All rights reserved.</p>
+    </footer>
+
+    <script src="slide.js"></script>
+    <script src="main.js"></script> 
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* 전체 스타일 */
+html{
+    height: 1400px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+head {
+display: flex;
+}
+/* 헤더 스타일 */
+header {
+    background-color: #141414;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7%;
+}
+
+#maintitle {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.5s, color 0.5s;
+    text-align: center;
+    margin: 0;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#maintitle:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 메인 컨텐츠 스타일 */
+main {
+    padding: 20px;
+    height: 88%;
+    display: flex;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px; /* "인기 콘텐츠" 텍스트 아래 간격 조정 */
+    margin-top: 20px;
+}
+
+.genre-select {
+    right: 20px;
+    width: 150px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 10;
+    margin-left: 85%; 
+    margin-top: -50px;
+}
+
+.genre-select label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.genre-select select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #666;
+    appearance: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 선택 상자 화살표 스타일링 */
+.genre-select select::-ms-expand {
+    display: none;
+}
+
+/* 영화 컨테이너 스타일 */
+.movie-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; /* 영화 포스터 상단 정렬 */
+    margin-top: 20px;
+    padding-top: 30px; /* 영화 포스터가 장르 선택 상자 아래로 내려오도록 패딩 추가 */
+}
+
+/* 영화 목록 */
+.movie-list {
+    display: flex;
+    gap: 15px; /* 영화 간격 조정 */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* 개별 영화 아이템 */
+.movie {
+    width: 220px; /* 넷플릭스 스타일 크기 */
+    height: 320px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 호버 시 효과 */
+.movie:hover {
+    transform: scale(1.1); /* 살짝 확대 */
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* 화살표 버튼 스타일 */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* 왼쪽 버튼 위치 */
+.prev-btn {
+    left: 10px;
+}
+
+/* 오른쪽 버튼 위치 */
+.next-btn {
+    right: 10px;
+}
+
+/* 푸터 스타일 */
+footer {
+    display: flex;
+    background-color: #141414;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    height: 5%;
+}
+
+/* 추가된 스타일 */
+.movie-card {
+    position: relative;
+}
+
+.movie-poster {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#trailer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* 예고편은 기본적으로 보이지 않도록 설정 */
+    transition: opacity 0.3s ease-in-out;
+}
+
+#trailer.playing {
+    opacity: 1; /* 재생 중일 때 보이도록 설정 */
+}
+
+.movie-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}

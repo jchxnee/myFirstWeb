@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">JUFLIX</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <header>
+        <h2 id="maintitle" onclick="window.location.href='index.html'">JUFLIX</h2>
+        <div class="search-bar">
+            <input type="text" placeholder="영화,드라마 검색" id="searchInput">
+            <button onclick="searchMovies()">검색</button>
+        </div>
+    </header>
+    <main>
+    <div class="form-wrapper">
+        <h2>로그인</h2>
+        <form action="#">
+            <div class="form-control">
+                <input type="text" required>
+                <label>이메일 주소 또는 전화번호</label>
+            </div>
+            <div class="form-control">
+                <input type="password" required>
+                <label>비밀번호</label>
+            </div>
+            <button type="submit">로그인</button>
+            <div class="form-help"> 
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">로그인 정보 저장</label>
+                </div>
+                <a href="#">도움이 필요하신가요?</a>
+            </div>
+        </form>
+        <p>Juflix 회원이 아닌가요? <a href="createMember1.html">지금 가입하세요</a></p>
+        <small>
+            이 페이지는 KH JUCHAN의 보호를 받아 사용자가 로봇이 아님을 확인합니다 
+            <a href="https://kh-academy.co.kr/main/main.kh">자세히 알아보기</a>
+        </small>
+    </div>
+</main>
+    <footer>
+        <p>&copy; 2025 JUCHAN. All rights reserved.</p>
+    </footer>
+
+    <script src="slide.js"></script>
+</body>
+</html>
